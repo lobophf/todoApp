@@ -4,14 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import dev.lobophf.todoapp.util.ConnectionFactory;
+
 public class Application {
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
-    System.out.println("Hi");
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		System.out.println("Hi");
 
-    Class.forName("com.mysql.cj.jdbc.Driver");
-
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/todoApp", "todoAppUser", "secret");
-    con.close();
-  }
+		Connection con = ConnectionFactory.getConnection();
+		ConnectionFactory.closeConnection(con);
+	}
 }
