@@ -1,4 +1,4 @@
-package dev.lobophf.todoapp;
+package dev.lobophf.todoapp.main;
 
 import java.sql.SQLException;
 import java.util.Date;
