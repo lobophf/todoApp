@@ -4,26 +4,32 @@ import java.util.Date;
 
 public class Task {
   private int id;
-  private int idProject;
+  private int projectId;
   private String name;
   private String description;
   private String notes;
-  private boolean isCompleted;
+  private boolean isDone;
   private Date deadline;
   private Date createdAt;
-  private Date updatedAt;
+  private Date lastTimeUpdatedOn;
 
-  public Task(int id, int idProject, String name, String description, String notes, boolean isCompleted, Date deadline,
-      Date createdAt, Date updatedAt) {
+  public Task(int id, int projectId, String name, String description, String notes, boolean isDone, Date deadline,
+      Date createdAt, Date lastTimeUpdatedOn) {
     this.id = id;
-    this.idProject = idProject;
+    this.projectId = projectId;
     this.name = name;
     this.description = description;
     this.notes = notes;
-    this.isCompleted = isCompleted;
+    this.isDone = isDone;
     this.deadline = deadline;
     this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
+    this.lastTimeUpdatedOn = lastTimeUpdatedOn;
+  }
+
+  public Task(){
+	this.createdAt = new java.util.Date();
+	this.lastTimeUpdatedOn = this.createdAt;
+	this.deadline = this.createdAt;
   }
 
   public int getId() {
@@ -35,11 +41,11 @@ public class Task {
   }
 
   public int getIdProject() {
-    return idProject;
+    return projectId;
   }
 
-  public void setIdProject(int idProject) {
-    this.idProject = idProject;
+  public void setProjectId(int projectId) {
+    this.projectId = projectId;
   }
 
   public String getName() {
@@ -66,12 +72,12 @@ public class Task {
     this.notes = notes;
   }
 
-  public boolean isCompleted() {
-    return isCompleted;
+  public boolean isDone() {
+    return isDone;
   }
 
-  public void setCompleted(boolean isCompleted) {
-    this.isCompleted = isCompleted;
+  public void setIsDone(boolean isDone) {
+    this.isDone = isDone;
   }
 
   public Date getDeadline() {
@@ -79,7 +85,7 @@ public class Task {
   }
 
   public void setDeadline(Date deadline) {
-    this.deadline = deadline;
+//    this.deadline = deadline;
   }
 
   public Date getCreatedAt() {
@@ -90,19 +96,19 @@ public class Task {
     this.createdAt = createdAt;
   }
 
-  public Date getUpdatedAt() {
-    return updatedAt;
+  public Date getLastTimeUpdatedOn() {
+    return lastTimeUpdatedOn;
   }
 
-  public void setUpdatedAt(Date updatedAt) {
-    this.updatedAt = updatedAt;
+  public void setLastTimeUpdatedOn(Date lastTimeUpdatedOn) {
+    this.lastTimeUpdatedOn = lastTimeUpdatedOn;
   }
 
   @Override
   public String toString() {
     return "Task [createdAt=" + createdAt + ", deadline=" + deadline + ", description=" + description + ", id=" + id
-        + ", idProject=" + idProject + ", isCompleted=" + isCompleted + ", name=" + name + ", notes=" + notes
-        + ", updatedAt=" + updatedAt + "]";
-  }
+        + ", idProject=" + projectId + ", lastTimeUpdatedOn=" + isDone + ", name=" + name + ", notes=" + notes
+        + ", lastTimeUpdatedOn=" + lastTimeUpdatedOn + "]";
 
+  }
 }

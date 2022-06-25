@@ -10,9 +10,9 @@ public class ConnectionFactory {
     
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/todoApp", "todoAppUser", "secret");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/todoApp", "todoAppAdminUser", "secret");
     } catch (Exception e) {
-      throw new RuntimeException("Connection with database refused", e);
+      throw new RuntimeException("Connection with database refused.", e);
     }
   }
 
@@ -22,7 +22,7 @@ public class ConnectionFactory {
           connection.close();
         }
     } catch (SQLException e) {
-      throw new RuntimeException("Connection with database cannot be closed.", e);
+      throw new RuntimeException("Connection with database couldn't be closed.", e);
     }
   }
 
